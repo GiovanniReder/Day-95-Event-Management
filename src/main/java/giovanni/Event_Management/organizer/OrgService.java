@@ -17,7 +17,7 @@ public class OrgService {
     private JWTTools jwtTools;
 
     public String authenticateUserAndGenerateToken(UserLoginDTO payload){
-        
+
         User user = this.usersService.findByEmail(payload.email());
         if(user.getPassword().equals(payload.password())){
             return jwtTools.createToken(user);

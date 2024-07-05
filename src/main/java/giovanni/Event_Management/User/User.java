@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
+
 @NoArgsConstructor
 
 public class User {
@@ -24,7 +24,11 @@ public class User {
 @Enumerated(EnumType.STRING)
 private UserTypeEnum type;
 
-
-    public User(String name, String surname, String email, String password) {
+    public User(String name, String surname, String email, String password, UserTypeEnum type) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.password = password;
+        this.type = type;
     }
 }

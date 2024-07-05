@@ -22,7 +22,10 @@ public record NewUserDTO(
 
         @NotEmpty(message = "The password is mandatory data!")
         @Size(min = 3, max = 25, message = "The password must be between 3 and 25 characters!")
-        String password
+        String password,
+
+        @NotEmpty(message = "The password is mandatory data!")
+        String role
 
 
 
