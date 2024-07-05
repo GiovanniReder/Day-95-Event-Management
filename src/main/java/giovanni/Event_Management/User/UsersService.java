@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.net.PasswordAuthentication;
+import java.util.Optional;
 
 @Service
 public class UsersService {
@@ -49,6 +50,15 @@ public UserTypeEnum role(NewUserDTO body){
 
     public User findById(long userId) {
         return this.usersRepository.findById(userId).orElseThrow(() -> new NotFoundException(userId));
+    }
+
+    public User getUser(long id){
+        Optional<User> user = usersRepository.findById(id);
+        if (user.isPresent()){
+            return user.get();
+        } else {
+            throw new NotFoundException("User no found!");
+        }
     }
 
 

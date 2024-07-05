@@ -11,23 +11,10 @@ public class UsersController {
     private UsersService usersService;
 
 
-// save utente
     @GetMapping("/{userId}")
     public User findById(@PathVariable long userId) {
         return this.usersService.findById(userId);
     }
-/*
-    @PutMapping("/{userId}")
-    public User findByIdAndUpdate(@PathVariable long userId, @RequestBody User body) {
-        return this.usersService.findByIdAndUpdate(userId, body);
-    }
 
-    @DeleteMapping("/{userId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void findByIdAndDelete(@PathVariable long userId) {
-        this.usersService.findByIdAndDelete(userId);
-    }
-
- */
 
 }
