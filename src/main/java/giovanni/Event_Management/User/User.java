@@ -1,16 +1,14 @@
 package giovanni.Event_Management.User;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "users")
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
 @NoArgsConstructor
 
 public class User {
@@ -25,4 +23,8 @@ public class User {
     private String password;
 @Enumerated(EnumType.STRING)
 private UserTypeEnum type;
+
+
+    public User(String name, String surname, String email, String password) {
+    }
 }
